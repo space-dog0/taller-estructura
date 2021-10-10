@@ -59,8 +59,6 @@ Describir brevemente las librerías utilizadas para la instalación y programas 
 
 
 
-Por ejemplo, 
-
 #### Detector de caras
 
 El detector de caras utilizado fue xxx. Para utilizarlo se debe.... El código para detectar una cara en una imagen se muestra a continuación:
