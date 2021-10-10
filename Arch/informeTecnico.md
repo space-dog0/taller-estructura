@@ -12,7 +12,9 @@
 
 ## Resumen 
 
->Para este taller se realizará un software de vigilancia que funcionará a través de visión artificial, en el cual reconocerá rostros de personas por medio de una cámara de video o un video ya grabado, en el cual etiquetará con un código único a cada persona. El software tendrá varios apartados para facilitar la vigilancia, en el transcurso de la sesión se podrá ver las personas que más tiempo pasan en cámara y los rostros estarán destacados por un rectángulo de color para una mejor identificación del usuario. Al terminar la sesión o el día, el sistema tendrá en memoria las personas que más tiempo estuvieron en cámara. También arrojará una lista con las entidades y se podrá observar en que intervalo de tiempo esta aparece en el video.
+> Para este taller se realizará de software de vigilancia que funcionará a través de visión artificial, en el cual reconocerá rostros de personas por medio de una cámara de video o un video ya grabado, en el cual etiquetará con un código único a cada persona.
+> El software tendrá varios apartados para facilitar la vigilancia, en el transcurso de la sesión se podrá ver las personas que más tiempo pasan en cámara y los rostros estarán destacados por un rectángulo de color. Al terminar la sesión o el día, el sistema tendrá en memoria las personas que más tiempo estuvieron en cámara.
+> También arrojará una lista con las entidades y se podrá observar en que intervalo de tiempo esta aparece en el video.
 
 ## 1. Introducción
 
@@ -35,12 +37,12 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 
 1.  Identificar rostros de personas que aparezcan en el video.
 2.  Asignar una ID a cada persona identificada.
-3.  Descacar rostros reconocidos por la libreria mediante un cuadrado de color.
-4.  Determinar cuanto tiempo aparece una persona determinada en el video.
+3.  Destacar rostros reconocidos por la librería mediante un cuadrado de color.
+4.  Determinar cuánto tiempo aparece una persona determinada en el video.
 
 ### 1.3 Solución propuesta
 
-Para este proyecto se utilizaran las librerias de OpenCv y el IDE Visual Studio Comunnity. 
+Para este proyecto se utilizarán las librerías de OpenCv y el IDE Visual Studio Comunnity.
 
 ## 2. Materiales y métodos
 
