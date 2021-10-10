@@ -21,4 +21,4 @@
 
 ### Documentos
 
-* [Reporte Técnico](Arch/README.md)
+* [Reporte Técnico](Arch/informeTecnico.md)
