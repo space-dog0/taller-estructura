@@ -42,7 +42,7 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 
 ### 1.3 Solución propuesta
 
-Para este proyecto se utilziaran las librerias de OpenCv y el IDE Visual Studio Comunnity. 
+Para este proyecto se utilizaran las librerias de OpenCv y el IDE Visual Studio Comunnity. 
 
 ## 2. Materiales y métodos
 
