@@ -31,7 +31,7 @@ Dado el laboratorio describir como se entiende el problema bajo sus propias pala
 
 **Objetivo General**
 
-El fin que se desea llegar. (Comenzar con un verbo: "Construir un sistema...", "Desarrollar un sistema...", etc)
+Implementar un sistema de detección de rostros que liste por persona la cantidad de tiempo que aparecieron dentro de un video.
 
 **Objetivos específicos**
 
