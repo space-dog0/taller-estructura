@@ -1,4 +1,4 @@
-![UCN](docs/images/60x60-ucn-negro.png)
+![UCN](Arch/60x60-ucn-negro.png)
 
 
 # Proyecto: Detección y reidentificación de caras en secuencias de imágenes o video
