@@ -67,17 +67,18 @@ Por ejemplo,
 El detector de caras utilizado fue xxx. Para utilizarlo se debe.... El código para detectar una cara en una imagen se muestra a continuación:
 
 ```c++
- 1. faceCascadePath = "./haarcascade_frontalface_default.xml";
- 2. faceCascade.load( faceCascadePath )
- 3. std::vector<Rect> faces;
- 4. faceCascade.detectMultiScale(frameGray, faces);
- 5. for ( size_t i = 0; i < faces.size(); i++ )
- 6. {
- 7.  int x1 = faces[i].x;
- 8.  int y1 = faces[i].y;
- 9.  int x2 = faces[i].x + faces[i].width;
-10.  int y2 = faces[i].y + faces[i].height;
-11. }
+faceCascadePath = "./haarcascade_frontalface_default.xml";
+faceCascade.load(faceCascadePath)
+std::vector<Rect> faces;
+faceCascade.detectMultiScale(frameGray, faces);
+
+for (size_t i = 0; i < faces.size(); i++)
+{
+	int x1 = faces[i].x;
+	int y1 = faces[i].y;
+	int x2 = faces[i].x + faces[i].width;
+	int y2 = faces[i].y + faces[i].height;
+}
 ```
 La primera linea carga el archivo de entrenamiento... etc
 
