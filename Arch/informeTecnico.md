@@ -36,8 +36,8 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 **Objetivos específicos**
 
 1.  Identificar rostros de personas que aparezcan en el video.
-2.  Asignar un id a cada persona identificada.
-3.  Descacar rostros reconocidos por la libreria mediante un rectangulo de color.
+2.  Asignar una ID a cada persona identificada.
+3.  Descacar rostros reconocidos por la libreria mediante un cuadrado de color.
 4.  Determinar cuanto tiempo aparece una persona determinada en el video.
 
 ### 1.3 Solución propuesta
