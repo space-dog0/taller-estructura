@@ -42,7 +42,7 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 
 ### 1.3 Solución propuesta
 
-Para este proyecto se utilizarán las librerías de OpenCV que ayuda a indentificar personas a travez de vision artificaial y el IDE Visual Studio Comunnity que es necesario para utilizar las librerias.
+Para este proyecto se utilizarán las librerías de OpenCV que ayuda a identificar personas a través de visión artificial y el IDE Visual Studio Comunnity que es necesario para utilizar las librerías.
 
 ## 2. Materiales y métodos
 
@@ -89,7 +89,7 @@ La 5 linea hasta la 10 crea los rectangulos para las caras identificadas
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
-para la instalacion de las librerias de openCv utilizamos la pagina oficial, y para la instalacion utilizamos el video proporcionado por el profesor.
+para la descarga de las librerías de OpenCv utilizamos la página oficial, y para la instalación utilizamos el video proporcionado por el profesor.
 ## Anexo B: Instalación de IDE y configuración librerías OpenCV
 
 # Referecia
