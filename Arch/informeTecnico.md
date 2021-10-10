@@ -12,9 +12,9 @@
 
 ## Resumen 
 
-> Para este taller se
-> Más cosas...
-> El resumen indicarlo como cita con el comando `>`
+> Para este taller se realizara de software de vigilancia que funcionara a traves de vision artificial, en el cual reconocerá rostros de personas por medio de una camara de video o un video ya grabado, en el cual etiquetará con un codigo unico a cada persona.
+> El software tendrá varios apartados para facilitar la vigilancia, en el transcurso de la sesion se podra ver las personas que más tiempo pasan en camara y los rostros estarán destacados por un rectangulo de color. Al terminar la sesion o el dia, el sistema tendra en memoria las personas que mas tiempo estuvieron en camara.
+> Tambien arrojará una lista con las entidades y se podrá observar en que intervalo de tiempo esta aparece en el video.
 ## 1. Introducción
 
 La primera función de un reporte técnico es plasmar la información necesaria para que otras personas puedan reproducir el sistema propuesto o puedan entender su fucnionamiento . Para cumplir anterior se debe diferenciar claramente entre los artefactos de diseño e implementación. En el caso de un desarrollo tecnológico los algoritmos son importantes como componente de diseño y los programas generalmente son irrelevantes y deben resumidos o agregados en anexos en el documento. Los programas no son importantes en el documento, salvo si se quiere explicar conceptos expecíficos del lenguaje o del algoritmo implementado.
