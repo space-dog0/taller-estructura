@@ -12,9 +12,7 @@
 
 ## Resumen 
 
-> Para este taller se realizara de software de vigilancia que funcionara a traves de vision artificial, en el cual reconocerá rostros de personas por medio de una camara de video o un video ya grabado, en el cual etiquetará con un codigo unico a cada persona.
-> El software tendrá varios apartados para facilitar la vigilancia, en el transcurso de la sesion se podra ver las personas que más tiempo pasan en camara y los rostros estarán destacados por un rectangulo de color. Al terminar la sesion o el dia, el sistema tendra en memoria las personas que mas tiempo estuvieron en camara.
-> Tambien arrojará una lista con las entidades y se podrá observar en que intervalo de tiempo esta aparece en el video.
+>Para este taller se realizará un software de vigilancia que funcionará a través de visión artificial, en el cual reconocerá rostros de personas por medio de una cámara de video o un video ya grabado, en el cual etiquetará con un código único a cada persona. El software tendrá varios apartados para facilitar la vigilancia, en el transcurso de la sesión se podrá ver las personas que más tiempo pasan en cámara y los rostros estarán destacados por un rectángulo de color para una mejor identificación del usuario. Al terminar la sesión o el día, el sistema tendrá en memoria las personas que más tiempo estuvieron en cámara. También arrojará una lista con las entidades y se podrá observar en que intervalo de tiempo esta aparece en el video.
 
 ## 1. Introducción
 
