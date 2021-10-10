@@ -25,7 +25,7 @@ El presente trabajo está dividido en 3 capítulos. El primer capítulo es la de
 
 ### 1.1 Descripción del problema
 
-Dado el laboratorio describir como se entiende el problema bajo sus propias palabras.
+El problema a resolver es crear un software de vigilancia capaz de reconocer rostros de personas y que, además sepa identificar a la persona que se encuentra en pantalla
 
 ### 1.2 Objetivos 
 
@@ -42,7 +42,7 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 
 ### 1.3 Solución propuesta
 
-Para este proyecto se utilizarán las librerías de OpenCV y el IDE Visual Studio Comunnity.
+Para este proyecto se utilizarán las librerías de OpenCV que ayuda a indentificar personas a travez de vision artificaial y el IDE Visual Studio Comunnity que es necesario para utilizar las librerias.
 
 ## 2. Materiales y métodos
 
@@ -66,20 +66,23 @@ Por ejemplo,
 El detector de caras utilizado fue xxx. Para utilizarlo se debe.... El código para detectar una cara en una imagen se muestra a continuación:
 
 ```c++
-faceCascadePath = "./haarcascade_frontalface_default.xml";
-faceCascade.load(faceCascadePath)
-std::vector<Rect> faces;
-faceCascade.detectMultiScale(frameGray, faces);
+ 1. faceCascadePath = "./haarcascade_frontalface_default.xml";
+ 2. faceCascade.load( faceCascadePath )
+ 3. std::vector<Rect> faces;
+ 4. faceCascade.detectMultiScale(frameGray, faces);
 
-for (size_t i = 0; i < faces.size(); i++)
-{
-	int x1 = faces[i].x;
-	int y1 = faces[i].y;
-	int x2 = faces[i].x + faces[i].width;
-	int y2 = faces[i].y + faces[i].height;
-}
+ 5. for ( size_t i = 0; i < faces.size(); i++ )
+ 6. {
+ 7.  int x1 = faces[i].x;
+ 8.  int y1 = faces[i].y;
+ 9.  int x2 = faces[i].x + faces[i].width;
+10.  int y2 = faces[i].y + faces[i].height;
+11. }
 ```
-La primera linea carga el archivo de entrenamiento... etc
+La primera linea carga el archivo de entrenamiento
+La segunda linea carga el path
+La tercera es un contenedor de secuencia que encapsula matrices de tamaño dinámico.
+La 5 linea hasta la 10 crea los rectangulos para las caras identificadas
 
 ## 3. Resultados obtenidos
 
@@ -88,12 +91,11 @@ La primera linea carga el archivo de entrenamiento... etc
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
-
+para la instalacion de las librerias de openCv utilizamos la pagina oficial, y para la instalacion utilizamos el video proporcionado por el profesor.
 ## Anexo B: Instalación de IDE y configuración librerías OpenCV
 
 # Referecia
 
 Indicar los libros, páginas web, documentos, etc. Utilizados en el trabajo. Por ejemplo:
 
-1. MONTERO, J.,Metodos matemáticos aplicados a la ganadería.3aed. Sevilla: Ediciones de la pradera,2007.
-2. LVARADO,   J.   P.,¿Qué   debe   contener   un   artículo   científico?.http://www.ie.tec.ac.cr/palvarado/pmwiki/index.php/MSc/Art\%c3\%adculoCient\%c3\%adfico. Fe-cha de acceso:13/Nov/2018
+1. Fernando, S., 2021. Introduction. [online] Opencv-srf.com. Available at: <https://www.opencv-srf.com/p/introduction.html> [Accessed 10 October 2021].
