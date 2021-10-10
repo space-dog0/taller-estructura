@@ -6,12 +6,12 @@
 
 ### Integrantes
 
-* Alumno 01 (Rol)
-* Alumno 02 (Rol)
+* Nicolas Bravo (Bitacora)
+* Carlos Tapia (Coordinador)
 
 ### Bitácora
 
-[Ver Bitácora](docs/BITACORA.md)
+[Ver Bitácora](Arch/BITACORA.md)
 
 ### Resumen
 
@@ -21,4 +21,4 @@
 
 ### Documentos
 
-* [Reporte Técnico](docs/README.md)
+* [Reporte Técnico](Arch/README.md)
