@@ -6,7 +6,7 @@
 
 ### Integrantes
 
-* Nicolas Bravo (Bitacora)
+* Nicolas Bravo (Encargado de bitacora)
 * Carlos Tapia (Coordinador)
 
 ### Bitácora
