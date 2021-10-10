@@ -15,6 +15,7 @@
 > Para este taller se realizara de software de vigilancia que funcionara a traves de vision artificial, en el cual reconocerá rostros de personas por medio de una camara de video o un video ya grabado, en el cual etiquetará con un codigo unico a cada persona.
 > El software tendrá varios apartados para facilitar la vigilancia, en el transcurso de la sesion se podra ver las personas que más tiempo pasan en camara y los rostros estarán destacados por un rectangulo de color. Al terminar la sesion o el dia, el sistema tendra en memoria las personas que mas tiempo estuvieron en camara.
 > Tambien arrojará una lista con las entidades y se podrá observar en que intervalo de tiempo esta aparece en el video.
+
 ## 1. Introducción
 
 En el presente proyecto se propone implementar un sistema de vigilancia basado en el reconocimiento de caras. El proyecto busca calcular el tiempo que una persona aparece en la cámara, incluso si esta se pierde en la detección o no se encuentra en el cuadro por un tiempo determinado.
@@ -39,10 +40,9 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 3.  Descacar rostros reconocidos por la libreria mediante un rectangulo de color.
 4.  Determinar cuanto tiempo aparece una persona determinada en el video.
 
-
 ### 1.3 Solución propuesta
 
-Utilizando las librerias de OpenCv y visual Studio 
+Para este proyecto se utilziaran las librerias de OpenCv y el IDE Visual Studio Comunnity. 
 
 ## 2. Materiales y métodos
 
