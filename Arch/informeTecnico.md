@@ -25,7 +25,7 @@ El presente trabajo está dividido en 3 capítulos. El primer capítulo es la de
 
 ### 1.1 Descripción del problema
 
-El problema a resolver es crear un software de vigilancia capaz de reconocer rostros de personas y que, además sepa identificar a la persona que se encuentra en pantalla
+El problema a resolver es crear un software de vigilancia capaz de reconocer rostros de personas y que, además sepa identificar a la persona que se encuentra en pantalla.
 
 ### 1.2 Objetivos 
 
@@ -56,8 +56,6 @@ Describir brevemente las librerías utilizadas para la instalación y programas 
 
 
 ### 2.3 Implementación
-
-
 
 #### Detector de caras
 
