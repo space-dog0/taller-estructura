@@ -77,8 +77,8 @@ EEl modelo de detección de rostros que utilizaremos será haar cascade, funcion
 10.  int y2 = faces[i].y + faces[i].height;
 11. }
 ```
-La primera linea carga el archivo de detector de caras haar
-La 5 linea hasta la 10 recorre cada persona detectada ubicando su posicion en la imagen
+La primera linea carga el archivo de detector de caras haar.
+La 5 linea hasta la 10 recorre cada persona detectada ubicando su posicion en la imagen.
 ## 3. Resultados obtenidos
 
 ## 4. Conclusiones
