@@ -19,7 +19,8 @@
 > El software tendrá varios apartados para facilitar la vigilancia, en el transcurso de la sesión se podrá ver las personas que más tiempo pasan en cámara y los rostros estarán destacados por un rectángulo de color. Al terminar la sesión o el día, el sistema tendrá en memoria las personas que más tiempo estuvieron en cámara.
 > También arrojará una lista con las entidades y se podrá observar en que intervalo de tiempo esta aparece en el video.
 
-![portada1]
+![portada1](Arch/Inicio___C19_Software.jpg)
+![portada2](Arch/Inicio___C19_Software3.jpg)
 
 ### Documentos
 
