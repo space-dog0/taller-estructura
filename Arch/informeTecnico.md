@@ -7,7 +7,7 @@
 
 **Alumnos:**
 
-* Nicolas Bravo (Encargado de bitacora)
+* Nicolas Bravo (Encargado de bitácora)
 * Carlos Tapia (Coordinador)
 
 ## Resumen 
@@ -42,14 +42,13 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 
 ### 1.3 Solución propuesta
 
-Para este proyecto se utilizarán el modelo haar cascade , ya que por lo que hemos podido investigar este es uno de los detectores de rostros más utilizados y eficientes.
+Para este proyecto se utilizarán el modelo Haar Cascade , ya que por lo que hemos podido investigar este es uno de los detectores de rostros más utilizados y eficientes.
 
 ## 2. Materiales y métodos
 
 ### 2.1 Instalación
 
-Para la realización de este proyecto se utilizaran las librerías de OpenCV (ver.4.3.5) y el IDE Visual Studio Comunnity 2019.
-Describir brevemente las librerías utilizadas para la instalación y programas utilizados para la ejecución del código. (Agregar una sección de anexo para describir como fueron instaladas las librerías de OpenCV y la IDE utilzada para el trabajo)
+Para la realización de este proyecto se utilizarán las librerías de OpenCV (ver.4.3.5) y el IDE Visual Studio Comunnity 2019.
 
 ### 2.2 Diseño 
 
@@ -61,7 +60,7 @@ Describir brevemente las librerías utilizadas para la instalación y programas 
 
 #### Detector de caras
 
-EEl modelo de detección de rostros que utilizaremos será haar cascade, funciona cargando el archivo de modelo en Haar Cascade y lo aplica a una imagen en escala de grises. el resultado es una lista que contiene las caras detectadas. Cada miembro de la lista es de nuevo una lista con 4 elementos que indican las coordenadas (x, y) de la esquina superior izquierda y el ancho y alto de la cara detectada.
+EEl modelo de detección de rostros que utilizaremos será Haar Cascade, funciona cargando el archivo de modelo en Haar Cascade y lo aplica a una imagen en escala de grises. el resultado es una lista que contiene las caras detectadas. Cada miembro de la lista es de nuevo una lista con 4 elementos que indican las coordenadas (x, y) de la esquina superior izquierda y el ancho y alto de la cara detectada.
 
 ```c++
  1. faceCascadePath = "./haarcascade_frontalface_default.xml";
@@ -77,8 +76,9 @@ EEl modelo de detección de rostros que utilizaremos será haar cascade, funcion
 10.  int y2 = faces[i].y + faces[i].height;
 11. }
 ```
-La primera linea carga el archivo de detector de caras haar.
-La 5 linea hasta la 10 recorre cada persona detectada ubicando su posicion en la imagen.
+La primera línea carga el archivo de detector de caras Haar.
+La 5 línea hasta la 10 recorre cada persona detectada ubicando su posición en la imagen.
+
 ## 3. Resultados obtenidos
 
 ## 4. Conclusiones
@@ -86,11 +86,9 @@ La 5 linea hasta la 10 recorre cada persona detectada ubicando su posicion en la
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
-para la descarga de las librerías de OpenCv utilizamos la página oficial, y para la instalación utilizamos el video proporcionado por el profesor.
+Para la descarga de las librerías de OpenCv utilizamos la página oficial, y para la instalación utilizamos el video proporcionado por el profesor.
 ## Anexo B: Instalación de IDE y configuración librerías OpenCV
 
-# Referecia
-
-Indicar los libros, páginas web, documentos, etc. Utilizados en el trabajo. Por ejemplo:
+# Referencia
 
 1. Fernando, S., 2021. Introduction. [online] Opencv-srf.com. Available at: <https://www.opencv-srf.com/p/introduction.html> [Accessed 10 October 2021].
