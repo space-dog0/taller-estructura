@@ -25,7 +25,7 @@ El presente trabajo está dividido en 3 capítulos. El primer capítulo es la de
 
 ### 1.1 Descripción del problema
 
-El problema a resolver es crear un software de vigilancia capaz de reconocer rostros de personas y que, además sepa identificar a la persona que se encuentra en pantalla.
+El problema a resolver es crear un software de vigilancia capaz de reconocer rostros de personas y que, además sepa identificar a la persona que se encuentra en pantalla
 
 ### 1.2 Objetivos 
 
@@ -42,7 +42,7 @@ Implementar un sistema de detección de rostros que liste por persona la cantida
 
 ### 1.3 Solución propuesta
 
-Para este proyecto se utilizarán las librerías de OpenCV que ayuda a identificar personas a través de visión artificial y el IDE Visual Studio Comunnity que es necesario para utilizar las librerías.
+Para este proyecto se utilizarán el modelo haar cascade , ya que por lo que hemos podido investigar este es uno de los detectores de rostros más utilizados y eficientes.
 
 ## 2. Materiales y métodos
 
@@ -57,9 +57,11 @@ Describir brevemente las librerías utilizadas para la instalación y programas 
 
 ### 2.3 Implementación
 
+
+
 #### Detector de caras
 
-El detector de caras utilizado fue xxx. Para utilizarlo se debe.... El código para detectar una cara en una imagen se muestra a continuación:
+EEl modelo de detección de rostros que utilizaremos será haar cascade, funciona cargando el archivo de modelo en Haar Cascade y lo aplica a una imagen en escala de grises. el resultado es una lista que contiene las caras detectadas. Cada miembro de la lista es de nuevo una lista con 4 elementos que indican las coordenadas (x, y) de la esquina superior izquierda y el ancho y alto de la cara detectada.
 
 ```c++
  1. faceCascadePath = "./haarcascade_frontalface_default.xml";
@@ -75,11 +77,8 @@ El detector de caras utilizado fue xxx. Para utilizarlo se debe.... El código p
 10.  int y2 = faces[i].y + faces[i].height;
 11. }
 ```
-La primera linea carga el archivo de entrenamiento
-La segunda linea carga el path
-La tercera es un contenedor de secuencia que encapsula matrices de tamaño dinámico.
-La 5 linea hasta la 10 crea los rectangulos para las caras identificadas
-
+La primera linea carga el archivo de detector de caras haar
+La 5 linea hasta la 10 recorre cada persona detectada ubicando su posicion en la imagen
 ## 3. Resultados obtenidos
 
 ## 4. Conclusiones
