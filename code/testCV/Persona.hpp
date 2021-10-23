@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "types.hpp"
+
 using namespace std;
 
 class Persona {
