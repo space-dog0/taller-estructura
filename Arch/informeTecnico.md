@@ -83,7 +83,6 @@ El modelo de detección de rostros que utilizaremos será Haar Cascade, funciona
 			Point pt1(x, y);
 			Point pt2((x + h), (y + w));
 			rectangle(img, pt1, pt2, Scalar(0, 0, 255), 1.5);
-			cout << listaPersonas->getFirst()->getPersona()->getId();
 			contador++;
 		}
 		imshow("Video", img);
