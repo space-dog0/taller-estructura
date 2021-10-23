@@ -2,7 +2,7 @@
 #include "LinkedList.hpp"
 #include "Nodo.hpp"
 
-LinkedList::LinkedList() {
+LinkedList::LinkedList() { // por ahora solo se hara con una lista simple  si lo amerita mas adelante se cambiara por otra
 	first = nullptr;
 }
 void LinkedList::insertarPrimer(Persona* persona) {
