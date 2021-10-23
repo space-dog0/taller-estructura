@@ -2,8 +2,6 @@
 #include "LinkedList.hpp"
 #include "Nodo.hpp"
 
-//hola
-
 LinkedList::LinkedList() {
 	first = nullptr;
 }
