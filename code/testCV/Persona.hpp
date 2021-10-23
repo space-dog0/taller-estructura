@@ -7,16 +7,16 @@ class Persona {
 private:
     int x;
     int y;
-    int width;
-    int height;
-    string id;
+    int w;
+    int h;
+    int id;
     int TiempoEnCamara;
 
 public:
-    Persona(string id, int TiempoEnCamara);
-    string getId();
+    Persona(int x, int y,int w , int h, int id);
+    int getId();
     int getTiempoEnCamara();
-    void setId(string id);
+    void setId(int id);
     void AgregarMinutos(int minutos);
     ~Persona(void);
 };

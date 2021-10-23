@@ -2,20 +2,24 @@
 #include "Persona.hpp"
 using namespace std;
 
-Persona::Persona(string id, int TiempoEnCamara) {
+Persona::Persona(int x, int y, int w, int h, int id) {
+	this->x = x;
+	this->y = y;
+	this->w = w;
+	this->h = h;
 	this->id = id;
-	this->TiempoEnCamara = TiempoEnCamara;
+	TiempoEnCamara = 0;
 }
 int Persona::getTiempoEnCamara() {
 	return TiempoEnCamara;
 }
-string Persona::getId() {
+int Persona::getId() {
 	return id;
 }
 void Persona::AgregarMinutos(int minutos) {
 	this->TiempoEnCamara += minutos;
 }
-void Persona::setId(string id) {
+void Persona::setId(int id) {
 	this->id = id;
 }
 Persona :: ~Persona() {
