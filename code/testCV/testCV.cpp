@@ -18,11 +18,13 @@ void main() {
 	Mat img;
 	CascadeClassifier faceCascade;
 	faceCascade.load("Resources/haarcascade_frontalface_default.xml");
-	while (true) {
+	int id = 0;
+	while (1) {
 		cap.read(img);
+		if (img.empty())  // si el frame esta vacio se rompe el bucle.
+			break;
 		vector<Rect> faces;
-		faceCascade.detectMultiScale(img, faces, 1.1, 2);
-		int contador = 0;
+		faceCascade.detectMultiScale(img, faces, 1.1, 9);
 		for (int i = 0; i < faces.size(); i++)
 		{
 			int x, y, w, h;
@@ -30,15 +32,14 @@ void main() {
 			y = faces[i].y;
 			w = faces[i].width;
 			h = faces[i].height;
-			Persona* persona = new Persona(x, y, w, h, contador);
+			Persona* persona = new Persona(x, y, w, h, id);
 			listaPersonas->insertarPrimer(persona);
-			rectangle(img, faces[i].tl(), faces[i].br(), Scalar(0, 0, 255), 1.5);
-			contador++;
+			Point tl(x, y); //esquina superior izquierda
+			Point br((x + h), (y + w)); // esquina inferior derecha
+			rectangle(img, tl, br, Scalar(0, 0, 255), 1.5);
+			id++;
 		}
-		imshow("Image", img);
+		imshow("Video", img);
 		waitKey(2);
 	}
-	cout << listaPersonas->getFirst()->getPersona()->getId();
-
-
 }
