@@ -60,28 +60,42 @@ Para la realización de este proyecto se utilizarán las librerías de OpenCV (v
 
 #### Detector de caras
 
-EEl modelo de detección de rostros que utilizaremos será Haar Cascade, funciona cargando el archivo de modelo en Haar Cascade y lo aplica a una imagen en escala de grises. el resultado es una lista que contiene las caras detectadas. Cada miembro de la lista es de nuevo una lista con 4 elementos que indican las coordenadas (x, y) de la esquina superior izquierda y el ancho y alto de la cara detectada.
+El modelo de detección de rostros que utilizaremos será Haar Cascade, funciona cargando el archivo de modelo en Haar Cascade y lo aplica a una imagen en escala de grises. el resultado es una lista que contiene las caras detectadas. Cada miembro de la lista es de nuevo una lista con 4 elementos que indican las coordenadas (x, y) de la esquina superior izquierda y el ancho y alto de la cara detectada.
 
 ```c++
- 1. faceCascadePath = "./haarcascade_frontalface_default.xml";
- 2. faceCascade.load( faceCascadePath )
- 3. std::vector<Rect> faces;
- 4. faceCascade.detectMultiScale(frameGray, faces);
-
- 5. for ( size_t i = 0; i < faces.size(); i++ )
- 6. {
- 7.  int x1 = faces[i].x;
- 8.  int y1 = faces[i].y;
- 9.  int x2 = faces[i].x + faces[i].width;
-10.  int y2 = faces[i].y + faces[i].height;
-11. }
+	faceCascade.load("Resources/haarcascade_frontalface_default.xml");
+	int id = 0;
+	while (1) {
+		cap.read(img);
+		if (img.empty())  // si el frame esta vacio se rompe el bucle.
+			break;
+		vector<Rect> faces;
+		faceCascade.detectMultiScale(img, faces, 1.1, 9);
+		for (int i = 0; i < faces.size(); i++)
+		{
+			int x, y, w, h;
+			x = faces[i].x;
+			y = faces[i].y;
+			w = faces[i].width;
+			h = faces[i].height;
+			Persona* persona = new Persona(x, y, w, h, id);
+			listaPersonas->insertarPrimer(persona);
+			Point tl(x, y);
+			Point br((x + h), (y + w));
+			rectangle(img, tl, br, Scalar(0, 0, 255), 1.5);
+			id++;
+		}
+		imshow("Video", img);
+		waitKey(2);
+	}
 ```
-La primera línea carga el archivo de detector de caras Haar.
-La 5 línea hasta la 10 recorre cada persona detectada ubicando su posición en la imagen.
+En esta etapa del proyecto como se puede observar en el codigo las caras obtenidas por la libreria se descomponen en sus coordenadas de inicio superior izquierda y longitudes de la cara guardandolas en una LinkedList
 
-## 3. Resultados obtenidos
+## 3. Resultados obtenido
+Hasta ahora se a implementado que a cada cara detectada un identificador , pero el principal problema es que cada frame que pasa en el video la cara la identifica como una nueva , por lo tanto a lo largo del video se identifican caras repetidas.
 
 ## 4. Conclusiones
+
 
 # Anexos
 
