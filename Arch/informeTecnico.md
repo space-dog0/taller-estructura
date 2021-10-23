@@ -64,8 +64,10 @@ El modelo de detección de rostros que utilizaremos será Haar Cascade, funciona
 
 ```c++
 	faceCascade.load("Resources/haarcascade_frontalface_default.xml");
-	while (true) {
+	while (1) {
 		cap.read(img);
+		if (img.empty())  // si el frame esta vacio se rompe el bucle.
+			break;
 		vector<Rect> faces;
 		faceCascade.detectMultiScale(img, faces, 1.1, 2);
 		int contador = 0;
@@ -78,10 +80,13 @@ El modelo de detección de rostros que utilizaremos será Haar Cascade, funciona
 			h = faces[i].height;
 			Persona* persona = new Persona(x, y, w, h, contador);
 			listaPersonas->insertarPrimer(persona);
-			rectangle(img, faces[i].tl(), faces[i].br(), Scalar(0, 0, 255), 1.5);
+			Point pt1(x, y);
+			Point pt2((x + h), (y + w));
+			rectangle(img, pt1, pt2, Scalar(0, 0, 255), 1.5);
+			cout << listaPersonas->getFirst()->getPersona()->getId();
 			contador++;
 		}
-		imshow("Image", img);
+		imshow("Video", img);
 		waitKey(2);
 	}
 ```
