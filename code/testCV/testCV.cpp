@@ -19,7 +19,6 @@ void main() {
 	listaPersonas->insertarPrimer(persona2);
 	cout << listaPersonas->getFirst()->getPersona()->getId() << endl;
 	cout << listaPersonas->getFirst()->getNext()->getPersona()->getId();
-	/// aaaaaaaaa
 	string path = "Resources/2carasrep.png";
 	Mat img = imread(path);
 	CascadeClassifier faceCascade;
