@@ -3,11 +3,16 @@
 #include "Persona.hpp"
 class Nodo {
 private:
-    Persona* persona;
-    Nodo* next;
+    Persona p;
+    Nodo* left;
+    Nodo* right;
 public:
-    Nodo(Persona* persona);
-    Persona* getPersona();
-    void setNext(Nodo* n);
-    Nodo* getNext();
+    Nodo(int dato);
+    Persona getPersona();
+    void setPersona(Persona p);
+    void setRight(Nodo* n);
+    void setLeft(Nodo* n);
+    Nodo* getRight();
+    Nodo* getLeft();
+    void show();
 };
