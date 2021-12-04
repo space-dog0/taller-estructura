@@ -91,6 +91,8 @@ El modelo de detección de rostros que utilizaremos será Haar Cascade, funciona
 ```
 En esta etapa del proyecto como se puede observar en el codigo las caras obtenidas por la libreria se descomponen en sus coordenadas de inicio superior izquierda y longitudes de la cara guardandolas en una LinkedList.
 
+![ref0](ref1.png)
+
 #### Implementacion del arbol binario
 
 Para el proyecto se implemento un arbol binario para guardar los rostros detectados con sus respectivas id's y tiempos que aparecieron en pantalla
@@ -159,8 +161,6 @@ void ArbolBinario::show() {
     show(raiz);
 }
 ```
-
-![ref0](ref1.png)
 
 ## 3. Resultados obtenido
 Hasta ahora se ha implementado que cada cara detectada tenga un identificador , pero el principal problema es que cada frame que pasa en el video la cara la identifica como una nueva , por lo tanto a lo largo del video se identifican caras repetidas.
