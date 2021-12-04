@@ -11,6 +11,7 @@ using namespace std;
 
 Nodo::Nodo(Persona* p ) {
 	this->persona = p;
+	vecesVista = 0;
 	right = nullptr;
 	left = nullptr;
 }
@@ -37,6 +38,9 @@ Nodo* Nodo::getLeft() {
 }
 void Nodo::vista() {
 	vecesVista++;
+}
+int Nodo::getVecesVista() {
+	return vecesVista;
 }
 void Nodo::setId(int id) {
 	this->id = id;

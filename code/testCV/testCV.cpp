@@ -18,6 +18,58 @@
 using namespace cv;
 using namespace std;
 
+int iniciarsesion() {
+    int opcion;
+    cout << "---Bienvenido'---\n 1)Iniciar sesion\n2)salir" << endl;
+    cin >> opcion;
+    if (opcion == 1) {
+        cout << "1)Administrador\n2)Guardia";
+        cin >> opcion;
+        if (opcion == 1) {
+            string pass;
+            cout << "ingrese su contrasena\n";
+            cin >> pass;
+            if (pass == "ADMIN") {
+                return 0;
+            }
+
+        }
+        else if(opcion ==2){
+            string pass;
+            cout << "ingrese su contrasena\n";
+            cin >> pass;
+            if (pass == "1234") {
+                return 1;
+            }
+        }
+        else {
+            return -1;
+        }
+    }
+}
+int MenuGuardia() {
+    int opcion;
+    cout << "1)Observar entidades\n2)mostrar cinco identidades mas vistas\n";
+    cin >> opcion;
+    return opcion;
+}
+int MenuAdmin() {
+    int opcion;
+    cout << "1)Listado de identidades detectadas y tiempo vistas";
+    cin >> opcion;
+    return opcion;
+}
+
+template <typename T>
+bool contains(vector<T> vec, const T& elem)
+{
+    bool result = true;
+    if (find(vec.begin(), vec.end(), elem) != vec.end())
+    {
+        result = false;
+    }
+    return result;
+}
 
 int main() {
     //vector<string> imagesStr;
@@ -36,23 +88,18 @@ int main() {
     //}
     //cout << "};" << endl;
     ArbolBinario* Arbol = new ArbolBinario();
-    Mat img;
     CascadeClassifier faceCascade;
-    CodificadorImg imgcoding;
-    Mat imageGray;
     faceCascade.load("Resources/haarcascade_frontalface_default.xml");
-
-
-    string path = "Resources/video7.mp4";
+    string path = "Resources/video9.mp4";
     VideoCapture cap(path);
-    cap.read(img);
-
-
     Scalar color(0, 0, 255);
     Scalar color2(0, 255, 9);
     Mat cropColor;
-    cap.read(img);
 
+    Mat img;
+    CodificadorImg imgcoding;
+    Mat imageGray;
+    cap.read(img);
     while (!img.empty()) {
         vector<Rect> faces;
         vector<Mat> CodigoCarasGrises;
@@ -61,33 +108,76 @@ int main() {
         faceCascade.detectMultiScale(imageGray, faces, 1.05, 8, 0 | CASCADE_SCALE_IMAGE, Size(50, 50)); // el primer parametro es la imagen que se leera , el segundo parametro es el vector conde se guardan las caras
         imgcoding.setImage(img);
         CodigoCarasGrises = imgcoding.codeGray(faces, true, Size(25, 25));
-
-        Mat colorImage;
-        Mat newSize;
-
-        int widthImageInGrayColor = 40;
-        int posX = 10;
         for (const auto& cf : CodigoCarasGrises) {
             // Inserto la imagen en el arbol y obtengo el identificador
             Persona* persona = new Persona(cf);
             Arbol->Insertar(persona);
-            // Muestro la imagen codificada en la imagen original
-            cvtColor(cf, colorImage, COLOR_GRAY2BGR);
-            resize(colorImage, newSize, Size(widthImageInGrayColor, widthImageInGrayColor), INTER_LINEAR);
-            newSize.copyTo(img(cv::Rect(posX, 10, newSize.cols, newSize.rows)));
-            posX += widthImageInGrayColor + 10;
+        }\
+    }
+    int entrada = iniciarsesion(); //true admin , false guardia
+    int opcion;
+    if (entrada == 1) {
+        opcion = MenuGuardia();
+        if (opcion==1) {
+            Mat img;
+            CodificadorImg imgcoding;
+            string path = "Resources/video9.mp4";
+            VideoCapture cap(path);
+            Mat imageGray;
+            Scalar color(0, 0, 255);
+            cap.read(img);
+            while (!img.empty()) {
+                vector<Rect> faces;
+                cvtColor(img, imageGray, COLOR_BGR2GRAY);
+                equalizeHist(imageGray, imageGray);
+                faceCascade.detectMultiScale(imageGray, faces, 1.05, 8, 0 | CASCADE_SCALE_IMAGE, Size(50, 50)); // el primer parametro es la imagen que se leera , el segundo parametro es el vector conde se guardan las caras
+                for (const auto& fm : faces) {
+                    rectangle(img, fm, color, 4);
+                }
+                imshow("Detected Face", img);
+                waitKey(2);
+                cap.read(img);
+            } 
         }
-        for (const auto& fm : faces) {
-            rectangle(img, fm, color, 4);
+        else if (opcion == 2) { //mostrar identidades mas vistas
+            vector<Nodo*> lista;
+            Arbol->recorrer(lista);
+            vector<int> listaMayores(5);
+            vector<int> idMayores(5);
+            //cout << lista[0]->getId();
+            int contador = -1;
+            int id = -1;
+            for (int j = 0; j < 5; j++)
+            {
+                for (int i = 0; i < lista.size(); i++)
+                {
+                    if (lista[i]->getVecesVista() > listaMayores[j] && contains(idMayores,lista[i]->getId())) 
+                    {
+                        listaMayores[j] = lista[i]->getVecesVista();
+                        idMayores[j] = lista[i]->getId();
+                        //contador = lista[i]->getVecesVista();
+                       // id = lista[i]->getId();
+                    }
+                }
+            }
+            for (int i = 0; i < 5; i++) {
+                cout << "la id "<<idMayores[i] << endl;
+                cout << "se ha visto " << listaMayores[i] <<"veces" << endl;
+
+            }
+
+            
+            //Arbol->Recorrer
         }
-        imshow("Detected Face", img);
-        waitKey(2);
-        cap.read(img);
+    }
+    if (entrada == 0) {
+        opcion = MenuAdmin();
     }
     // Esperar hasta presionar la tecla ESC
     Arbol->show(); //se muestra toda la info del arbol binario
     destroyAllWindows();
 
 }
+
 
 

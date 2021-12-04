@@ -5,6 +5,7 @@ using namespace std;
 
 ArbolBinario::ArbolBinario() {
     raiz = nullptr;
+    ids = 0;
 }
 double ArbolBinario::distanciaEuclideana(Mat img1, Mat img2) {
     return norm(img1, img2, NORM_L2);
@@ -14,7 +15,10 @@ void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en gr
     if (raiz == nullptr) {
         Nodo* nn = new Nodo(p);
         nn->vista();
+        nn->setId(ids);
+        ids++;
         raiz = nn; // se asigna a raiz el nuevo nodo
+
     }
     else {
         Nodo* nodoAux = raiz;
@@ -23,6 +27,8 @@ void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en gr
             if (diferente <= distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg())) {
                 if (nodoAux->getRight() == nullptr) { // si esta vacio se agrega
                     Nodo* nn = new Nodo(p);
+                    nn->setId(ids);
+                    ids++;
                     nn->vista();
                     nodoAux->setRight(nn);
                     b = false;
@@ -34,6 +40,8 @@ void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en gr
             else if (similar < distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg()) && diferente > distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg())) {
                 if (nodoAux->getLeft() == nullptr) {
                     Nodo* nn = new Nodo(p);
+                    nn->setId(ids);
+                    ids++;
                     nn->vista();
                     nodoAux->setLeft(nn);
                     b = false;
@@ -60,6 +68,17 @@ void ArbolBinario::show(Nodo* node) {
         node->show();
         show(node->getLeft());
         show(node->getRight());
+    }
+}
+void ArbolBinario::recorrer(vector<Nodo*> lista) {
+    recorrer(raiz,lista);
+}
+void ArbolBinario::recorrer(Nodo* node, vector<Nodo*> lista)
+{
+    if (node != NULL) {
+        lista.push_back(node);
+        recorrer(node->getLeft(),lista);
+        recorrer(node->getRight(),lista);
     }
 }
 void ArbolBinario::show() {

@@ -21,5 +21,6 @@ public:
     void setId(int id);
     void vista();
     int getId();
+    int getVecesVista();
     void show();
 };
