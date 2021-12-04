@@ -5,6 +5,7 @@ using namespace std;
 
 Nodo::Nodo(Persona* p ) {
 	this->persona = p;
+	vecesVista = 0;
 	right = nullptr;
 	left = nullptr;
 }
@@ -15,10 +16,24 @@ void Nodo::setPersona(Persona* p) {
 	this->persona = p;
 }
 void Nodo::show() {
-	cout << "[" << persona->getId() << "]";
+	cout << "La persona con id " << id;
+	cout << " se a visto" << endl;
+	cout << "[ " << vecesVista <<" ]"<<" frames de video"<<endl;
 }
 void Nodo::setRight(Nodo* n) {
 	right = n;
+}
+void Nodo::vista() {
+	vecesVista++;
+}
+int Nodo::getVecesVista() {
+	return vecesVista;
+}
+void Nodo::setId(int id) {
+	this->id = id;
+}
+int Nodo::getId() {
+	return id;
 }
 void Nodo::setLeft(Nodo* n) {
 	left = n;
