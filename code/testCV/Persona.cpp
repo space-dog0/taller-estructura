@@ -1,26 +1,27 @@
 #include <iostream>
 #include "Persona.hpp"
+using namespace cv;
 using namespace std;
 
-Persona::Persona(int x, int y, int w, int h, int id) {
-	this->x = x;
-	this->y = y;
-	this->w = w;
-	this->h = h;
-	this->id = id;
-	TiempoEnCamara = 0;
+Persona::Persona(Mat image) {
+	img = image;
 }
-int Persona::getTiempoEnCamara() {
-	return TiempoEnCamara;
-}
+
 int Persona::getId() {
 	return id;
 }
-void Persona::AgregarMinutos(int minutos) {
-	this->TiempoEnCamara += minutos;
+Mat Persona::getImg() {
+	return img;
+}
+void Persona::setImg(Mat image) {
+	this->img = image;
+}
+void Persona::vista() {
+	vecesVista++;
 }
 void Persona::setId(int id) {
 	this->id = id;
 }
+
 Persona :: ~Persona() {
 }

@@ -146,7 +146,6 @@
   <ItemGroup>
     <ClCompile Include="Arbol.cpp" />
     <ClCompile Include="CodficadorImg.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="Persona.cpp" />
     <ClCompile Include="testCV.cpp" />
@@ -154,7 +153,6 @@
   <ItemGroup>
     <ClInclude Include="Arbol.hpp" />
     <ClInclude Include="CodificadorImg.hpp" />
-    <ClInclude Include="LinkedList.hpp" />
     <ClInclude Include="Nodo.hpp" />
     <ClInclude Include="Persona.hpp" />
   </ItemGroup>

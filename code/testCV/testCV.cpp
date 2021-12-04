@@ -6,64 +6,90 @@
 #include <sstream>
 #include "Persona.hpp"
 #include "Nodo.hpp"
-#include "LinkedList.hpp"
+#include "Arbol.hpp"
 #include "CodificadorImg.hpp"
+#include <string>
+#include "opencv2/objdetect.hpp"
+#include "opencv2/imgproc.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/core.hpp"
+
 
 using namespace cv;
 using namespace std;
 
 
-void main() {
-	LinkedList* listaPersonas = new LinkedList();
+int main() {
+    vector<string> imagesStr;
+    //TODO: Cargar todos los archivos del directorio automáticamente
+    imagesStr.push_back("data/image-007.jpeg");
+    imagesStr.push_back("data/image-008.jpeg");
+    imagesStr.push_back("data/image-024.jpeg");
+    imagesStr.push_back("data/image-025.jpeg");
+    imagesStr.push_back("data/image-026.jpeg");
+    imagesStr.push_back("data/image-046.jpeg");
+    imagesStr.push_back("data/image-047.jpeg");
+
+    cout << "imagesStr = { ";
+    for (string n : imagesStr) {
+        cout << n << ", ";
+    }
+    cout << "};" << endl;
+
+	ArbolBinario* Arbol = new ArbolBinario();
 	Mat img;
-	img = imread("Resources/wil3.jpg", IMREAD_COLOR);
-	CascadeClassifier faceCascade;
-	CodificadorImg imgcoding;
-	int sum = 1;
-	faceCascade.load("Resources/haarcascade_frontalface_default.xml");
-	int id = 0;
-	vector<Rect> faces;
-	vector<Mat> CodigoCarasGrises;
-	Mat imageGray;
-	cvtColor(img, imageGray, COLOR_BGR2GRAY);
-	equalizeHist(imageGray, imageGray);
-		//if (img.empty())  // si el frame esta vacio se rompe el bucle.
-		//	break;
-	faceCascade.detectMultiScale(imageGray, faces, 1.05, 4, 0 | CASCADE_SCALE_IMAGE,Size(50,50)); // el primer parametro es la imagen que se leera , el segundo parametro es el vector conde se guardan las caras
-	Scalar color(0, 0, 255);
-	Scalar color2(0, 255, 9);
-	Mat cropColor;
-	Mat resizedDown;
-	imgcoding.setImage(img);
-	CodigoCarasGrises = imgcoding.codeGray(faces, true, Size(20, 20));
-
-	 // las caras codificadas
-	//for (const auto& cf : CodigoCarasGrises) {
-	//	imshow("Imagen Codificida", cf);
-	//	waitKey(0);
-	//}
+    CascadeClassifier faceCascade;
+    CodificadorImg imgcoding;
+    Mat imageGray;
+    faceCascade.load("Resources/haarcascade_frontalface_default.xml");
 
 
-	Mat img1;
-	bool encontrado = false;
-	for (int i = 0; i < CodigoCarasGrises.size(); i++) {
-		img1 = CodigoCarasGrises[i];
-		for (const auto& cf : CodigoCarasGrises) {
-			double dist = norm(img1, cf, NORM_L2);
-			cout << "Comparación imagen 1 con imagen " << sum << ":" << dist << endl;
-			if (dist < 1000) { // si la operacion es menor a 1000 , se encontro el rostro
-				rectangle(img, faces[sum - 1], color2, 4);
-				encontrado = true;
-			}
-			else {
-				rectangle(img, faces[sum - 1], color, 4);
-
-			}
-			sum++;
-		}
-	}
+    Scalar color(0, 0, 255);
+    Scalar color2(0, 255, 9);
+    Mat cropColor;
+   
 
 
-	imshow("imagen", img);
-	waitKey(0);	
+    for (string image : imagesStr) {
+
+        vector<Rect> faces;
+        vector<Mat> CodigoCarasGrises;
+        img = imread(image, IMREAD_COLOR);
+        cvtColor(img, imageGray, COLOR_BGR2GRAY);
+        equalizeHist(imageGray, imageGray);
+        faceCascade.detectMultiScale(imageGray, faces, 1.05, 8, 0 | CASCADE_SCALE_IMAGE, Size(50, 50)); // el primer parametro es la imagen que se leera , el segundo parametro es el vector conde se guardan las caras
+        imgcoding.setImage(img);
+        CodigoCarasGrises = imgcoding.codeGray(faces, true, Size(25, 25));
+
+        Mat colorImage;
+        Mat newSize;
+
+        int widthImageInGrayColor = 40;
+        int posX = 10;
+        for (const auto& cf : CodigoCarasGrises) {
+            // Inserto la imagen en el arbol y obtengo el identificador
+            Persona* persona = new Persona(cf);
+            Arbol->Insertar(persona);
+            // Muestro la imagen codificada en la imagen original
+            cvtColor(cf, colorImage, COLOR_GRAY2BGR);
+            resize(colorImage, newSize, Size(widthImageInGrayColor, widthImageInGrayColor), INTER_LINEAR);
+            newSize.copyTo(img(cv::Rect(posX, 10, newSize.cols, newSize.rows)));
+            posX += widthImageInGrayColor + 10;
+        }
+        for (const auto& fm : faces) {
+            rectangle(img, fm, color, 4);
+        }
+        imshow("Detected Face", img);
+        waitKey(0);
+    }
+    // Esperar hasta presionar la tecla ESC
+    while (true) {
+        int pressKey = waitKey(100);
+        if (pressKey == 27 || pressKey == 113) break;
+    }
+
+    destroyAllWindows();
+
 }
+
+

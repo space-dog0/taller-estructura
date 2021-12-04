@@ -3,19 +3,19 @@
 #include "Persona.hpp"
 using namespace std;
 
-Nodo::Nodo(Persona p ) {
-	this->p = p;
+Nodo::Nodo(Persona* p ) {
+	this->persona = p;
 	right = nullptr;
 	left = nullptr;
 }
-Persona Nodo::getPersona() {
-	return p;
+Persona* Nodo::getPersona() {
+	return persona;
 }
-void Nodo::setPersona(Persona p) {
-	this->p = p;
+void Nodo::setPersona(Persona* p) {
+	this->persona = p;
 }
 void Nodo::show() {
-	cout << "[" << Persona << "]";
+	cout << "[" << persona->getId() << "]";
 }
 void Nodo::setRight(Nodo* n) {
 	right = n;

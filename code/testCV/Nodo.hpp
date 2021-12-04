@@ -1,15 +1,17 @@
 #pragma once
 #include <iostream>
 #include "Persona.hpp"
+#include <opencv2/core/mat.hpp>
+using namespace cv;
 class Nodo {
 private:
-    Persona p;
+    Persona* persona;
     Nodo* left;
     Nodo* right;
 public:
-    Nodo(int dato);
-    Persona getPersona();
-    void setPersona(Persona p);
+    Nodo(Persona* persona);
+    void setPersona(Persona* persona);
+    Persona* getPersona();
     void setRight(Nodo* n);
     void setLeft(Nodo* n);
     Nodo* getRight();
