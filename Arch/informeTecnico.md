@@ -91,6 +91,75 @@ El modelo de detección de rostros que utilizaremos será Haar Cascade, funciona
 ```
 En esta etapa del proyecto como se puede observar en el codigo las caras obtenidas por la libreria se descomponen en sus coordenadas de inicio superior izquierda y longitudes de la cara guardandolas en una LinkedList.
 
+#### Implementacion del arbol binario
+
+Para el proyecto se implemento un arbol binario para guardar los rostros detectados con sus respectivas id's y tiempos que aparecieron en pantalla
+
+```c++
+void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en grises
+    if (raiz == nullptr) {
+        Nodo* nn = new Nodo(p);
+        nn->vista();
+        nn->setId(ids);
+        ids++;
+        raiz = nn; // se asigna a raiz el nuevo nodo
+
+    }
+    else {
+        Nodo* nodoAux = raiz;
+        bool b = true;
+        while (b) {
+            if (diferente <= distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg())) {
+                if (nodoAux->getRight() == nullptr) { // si esta vacio se agrega
+                    Nodo* nn = new Nodo(p);
+                    nn->setId(ids);
+                    ids++;
+                    nn->vista();
+                    nodoAux->setRight(nn);
+                    b = false;
+                }
+                else {
+                    nodoAux = nodoAux->getRight(); // sino se sigue bajando
+                }
+            }
+            else if (similar < distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg()) && diferente > distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg())) {
+                if (nodoAux->getLeft() == nullptr) {
+                    Nodo* nn = new Nodo(p);
+                    nn->setId(ids);
+                    ids++;
+                    nn->vista();
+                    nodoAux->setLeft(nn);
+                    b = false;
+                }
+                else {
+                    nodoAux = nodoAux->getLeft();
+                }
+            }
+            //este else es si la distancia e, es menor a la variable 'similar' (significa que es la misma cara).
+            else {
+                nodoAux->setPersona(p); // se remplaza la persona del nodo.
+                nodoAux->vista(); // +1 veces  vista 
+                b = false; //al remplazar la persona se corta el bucle
+            }
+        }
+    }
+}
+```
+Tambien se implemento el siguiente metodo para desplegar en la consola las id´s de los rostros detectados con sus respectivos tiempos de aparicion en pantalla
+
+```c++
+void ArbolBinario::show(Nodo* node) {
+    if (node != NULL) {
+        node->show();
+        show(node->getLeft());
+        show(node->getRight());
+    }
+}
+void ArbolBinario::show() {
+    show(raiz);
+}
+```
+
 ![ref0](ref1.png)
 
 ## 3. Resultados obtenido
