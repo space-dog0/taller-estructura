@@ -161,7 +161,7 @@ void ArbolBinario::show() {
     show(raiz);
 }
 ```
-![ref0](Demostracion show.png)
+![ref2](ref2.png)
 
 ## 3. Resultados obtenido
 Hasta ahora se ha implementado que cada cara detectada tenga un identificador , pero el principal problema es que cada frame que pasa en el video la cara la identifica como una nueva , por lo tanto a lo largo del video se identifican caras repetidas.
