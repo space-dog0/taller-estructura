@@ -85,10 +85,6 @@ int main() {
         cap.read(img);
     }
     // Esperar hasta presionar la tecla ESC
-    while (true) {
-        int pressKey = waitKey(100);
-        if (pressKey == 27 || pressKey == 113) break;
-    }
     Arbol->show(); //se muestra toda la info del arbol binario
     destroyAllWindows();
 
