@@ -212,7 +212,7 @@ void ArbolBinario::show() {
 ![ref2](ref2.png)
 
 ## 3. Resultados obtenido
-Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un arbol binario , ademas se puede obtener cuanto tiempo que estuvo en pantalla como tambien su id
+Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un arbol binario , ademas se puede obtener cuanto tiempo esta  estuvo en pantalla, como tambien su id
 
 ## 4. Conclusiones
 
