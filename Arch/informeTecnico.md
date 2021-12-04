@@ -212,7 +212,7 @@ void ArbolBinario::show() {
 ![ref2](ref2.png)
 
 ## 3. Resultados obtenido
-Hasta ahora se ha implementado que cada cara detectada tenga un identificador , pero el principal problema es que cada frame que pasa en el video la cara la identifica como una nueva , por lo tanto a lo largo del video se identifican caras repetidas.
+Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un arbol binario , ademas se puede obtener cuanto tiempo que estuvo en pantalla como tambien su id
 
 ## 4. Conclusiones
 
