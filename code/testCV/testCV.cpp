@@ -20,41 +20,42 @@ using namespace std;
 
 
 int main() {
-    vector<string> imagesStr;
-    //TODO: Cargar todos los archivos del directorio automáticamente
-    imagesStr.push_back("data/image-007.jpeg");
-    imagesStr.push_back("data/image-008.jpeg");
-    imagesStr.push_back("data/image-024.jpeg");
-    imagesStr.push_back("data/image-025.jpeg");
-    imagesStr.push_back("data/image-026.jpeg");
-    imagesStr.push_back("data/image-046.jpeg");
-    imagesStr.push_back("data/image-047.jpeg");
+    //vector<string> imagesStr;
+    ////TODO: Cargar todos los archivos del directorio automáticamente
+    //imagesStr.push_back("data/image-007.jpeg");
+    //imagesStr.push_back("data/image-008.jpeg");
+    //imagesStr.push_back("data/image-024.jpeg");
+    //imagesStr.push_back("data/image-025.jpeg");
+    //imagesStr.push_back("data/image-026.jpeg");
+    //imagesStr.push_back("data/image-046.jpeg");
+    //imagesStr.push_back("data/image-047.jpeg");
 
-    cout << "imagesStr = { ";
-    for (string n : imagesStr) {
-        cout << n << ", ";
-    }
-    cout << "};" << endl;
-
-	ArbolBinario* Arbol = new ArbolBinario();
-	Mat img;
+    //cout << "imagesStr = { ";
+    //for (string n : imagesStr) {
+    //    cout << n << ", ";
+    //}
+    //cout << "};" << endl;
+    ArbolBinario* Arbol = new ArbolBinario();
+    Mat img;
     CascadeClassifier faceCascade;
     CodificadorImg imgcoding;
     Mat imageGray;
     faceCascade.load("Resources/haarcascade_frontalface_default.xml");
 
 
+    string path = "Resources/video7.mp4";
+    VideoCapture cap(path);
+    cap.read(img);
+
+
     Scalar color(0, 0, 255);
     Scalar color2(0, 255, 9);
     Mat cropColor;
-   
+    cap.read(img);
 
-
-    for (string image : imagesStr) {
-
+    while (!img.empty()) {
         vector<Rect> faces;
         vector<Mat> CodigoCarasGrises;
-        img = imread(image, IMREAD_COLOR);
         cvtColor(img, imageGray, COLOR_BGR2GRAY);
         equalizeHist(imageGray, imageGray);
         faceCascade.detectMultiScale(imageGray, faces, 1.05, 8, 0 | CASCADE_SCALE_IMAGE, Size(50, 50)); // el primer parametro es la imagen que se leera , el segundo parametro es el vector conde se guardan las caras
@@ -80,14 +81,15 @@ int main() {
             rectangle(img, fm, color, 4);
         }
         imshow("Detected Face", img);
-        waitKey(0);
+        waitKey(2);
+        cap.read(img);
     }
     // Esperar hasta presionar la tecla ESC
     while (true) {
         int pressKey = waitKey(100);
         if (pressKey == 27 || pressKey == 113) break;
     }
-
+    Arbol->show(); //se muestra toda la info del arbol binario
     destroyAllWindows();
 
 }

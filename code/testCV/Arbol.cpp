@@ -13,6 +13,7 @@ double ArbolBinario::distanciaEuclideana(Mat img1, Mat img2) {
 void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en grises
     if (raiz == nullptr) {
         Nodo* nn = new Nodo(p);
+        nn->vista();
         raiz = nn; // se asigna a raiz el nuevo nodo
     }
     else {
@@ -22,6 +23,7 @@ void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en gr
             if (diferente <= distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg())) {
                 if (nodoAux->getRight() == nullptr) { // si esta vacio se agrega
                     Nodo* nn = new Nodo(p);
+                    nn->vista();
                     nodoAux->setRight(nn);
                     b = false;
                 }
@@ -32,6 +34,7 @@ void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en gr
             else if (similar < distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg()) && diferente > distanciaEuclideana(nodoAux->getPersona()->getImg(), p->getImg())) {
                 if (nodoAux->getLeft() == nullptr) {
                     Nodo* nn = new Nodo(p);
+                    nn->vista();
                     nodoAux->setLeft(nn);
                     b = false;
                 }
@@ -42,7 +45,7 @@ void ArbolBinario::Insertar(Persona* p) { //llega la persona con la imagen en gr
             //este else es si la distancia e, es menor a la variable 'similar' (significa que es la misma cara).
             else {
                 nodoAux->setPersona(p); // se remplaza la persona del nodo.
-                p->vista(); // +1 veces  vista 
+                nodoAux->vista(); // +1 veces  vista 
                 b = false; //al remplazar la persona se corta el bucle
             }
         }

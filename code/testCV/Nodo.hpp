@@ -6,6 +6,8 @@ using namespace cv;
 class Nodo {
 private:
     Persona* persona;
+    int id;
+    int vecesVista;
     Nodo* left;
     Nodo* right;
 public:
@@ -16,5 +18,8 @@ public:
     void setLeft(Nodo* n);
     Nodo* getRight();
     Nodo* getLeft();
+    void setId(int id);
+    void vista();
+    int getId();
     void show();
 };
