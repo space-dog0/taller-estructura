@@ -93,6 +93,54 @@ En esta etapa del proyecto como se puede observar en el codigo las caras obtenid
 
 ![ref0](ref1.png)
 
+#### Menu de inicio de sesion
+
+Se implemento un menu de inicio de sesion tanto para iniciar como guardia o como administrador.
+
+```c++
+int iniciarsesion() {
+    int opcion;
+    cout << "---Bienvenido'---\n 1)Iniciar sesion\n2)salir" << endl;
+    cin >> opcion;
+    if (opcion == 1) {
+        cout << "1)Administrador\n2)Guardia";
+        cin >> opcion;
+        if (opcion == 1) {
+            string pass;
+            cout << "ingrese su contrasena\n";
+            cin >> pass;
+            if (pass == "ADMIN") {
+                return 0;
+            }
+
+        }
+        else if(opcion ==2){
+            string pass;
+            cout << "ingrese su contrasena\n";
+            cin >> pass;
+            if (pass == "1234") {
+                return 1;
+            }
+        }
+        else {
+            return -1;
+        }
+    }
+}
+int MenuGuardia() {
+    int opcion;
+    cout << "1)Observar entidades\n2)mostrar cinco identidades mas vistas\n";
+    cin >> opcion;
+    return opcion;
+}
+int MenuAdmin() {
+    int opcion;
+    cout << "1)Listado de identidades detectadas y tiempo vistas";
+    cin >> opcion;
+    return opcion;
+}
+```
+
 #### Implementacion del arbol binario
 
 Para el proyecto se implemento un arbol binario para guardar los rostros detectados con sus respectivas id's y tiempos que aparecieron en pantalla.
