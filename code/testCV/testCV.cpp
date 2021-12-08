@@ -112,7 +112,7 @@ int main() {
             // Inserto la imagen en el arbol y obtengo el identificador
             Persona* persona = new Persona(cf);
             Arbol->Insertar(persona);
-        }\
+        }
     }
     int entrada = iniciarsesion(); //true admin , false guardia
     int opcion;
