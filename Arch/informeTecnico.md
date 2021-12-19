@@ -211,8 +211,53 @@ void ArbolBinario::show() {
 ```
 ![ref2](ref2.png)
 
+#### Implementacion del arbol AVL
+
+Se ha implementado un arbol de tipo AVL que se ira balanceando automaticamente a medida que se va insertando los rostros detectados dandonles una id y el tiempo en pantalla
+
+```c++
+Nodo* ArbolBinario::insert(Nodo* nodo, Mat image) {
+    // Tolerancia para considerar una imagen igual
+    //Si el árbol no tiene hijos
+    if (nodo == nullptr) {
+        nodo = new Nodo();
+        nodo->vista();
+        nodo->setId(ids);
+        nodo->img = image;
+        nodo->l = nullptr;
+        nodo->r = nullptr;
+        ids++;
+        return nodo;
+    }
+    else if (similar < distanciaEuclideana(nodo->img, image) && diferente > distanciaEuclideana(nodo->img, image)) {
+        nodo->l = insert(nodo->l, image);
+        if (!isBalanced(nodo)) { //ver si se rota
+            double d = distanciaEuclideana(nodo->l->img, image);
+            nodo = (d < similar && d < diferente) ? singleRightRotate(nodo) : doubleRightRotate(nodo);
+        }
+
+    }
+    else if (diferente <= distanciaEuclideana(nodo->img, image)) {
+        nodo->r = insert(nodo->r, image);
+
+        if (!isBalanced(nodo)) { //ver si rota
+            double d = distanciaEuclideana( nodo->r->img,image);
+            nodo = (d > diferente) ? singleLeftRotate(nodo) : doubleLeftRotate(nodo);
+        }
+    }
+    else { //La cara es igual (menor a la distancia exigida para similar)
+        nodo->img = image; //Cambio la imagen por la nueva
+        nodo->vista(); //+1 veces vista la imagen
+
+    }
+    updateHeight(nodo);
+    return nodo;
+}
+```
+Se seguira utilizando el mismo metodo para desplegar por pantalla la información de cada persona.
+
 ## 3. Resultados obtenido
-Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un arbol binario , ademas se puede obtener cuanto tiempo esta  estuvo en pantalla, como tambien su id.
+Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un arbol binario , ademas se puede obtener cuanto tiempo esta estuvo en pantalla, como tambien su id.
 
 ## 4. Conclusiones
 
