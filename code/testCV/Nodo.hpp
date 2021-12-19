@@ -8,19 +8,21 @@ private:
     Persona* persona;
     int id;
     int vecesVista;
-    Nodo* left;
-    Nodo* right;
 public:
-    Nodo(Persona* persona);
-    void setPersona(Persona* persona);
-    Persona* getPersona();
+    Nodo* l;
+    Nodo* r;
+    int h;
+    Mat img;
+    Nodo();
     void setRight(Nodo* n);
     void setLeft(Nodo* n);
-    Nodo* getRight();
-    Nodo* getLeft();
     void setId(int id);
     void vista();
     int getId();
+    void setAltura(int h);
+    int getAltura();
     int getVecesVista();
     void show();
+    Mat getImg();
+    void setImg(Mat image);
 };

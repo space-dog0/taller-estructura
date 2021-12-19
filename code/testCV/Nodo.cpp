@@ -9,18 +9,14 @@
 #define FBLU(x) KBLU x RST
 using namespace std;
 
-Nodo::Nodo(Persona* p ) {
-	this->persona = p;
+Nodo::Nodo() {
 	vecesVista = 0;
-	right = nullptr;
-	left = nullptr;
+	r = nullptr;
+	l = nullptr;
+	h = 0;
 }
-Persona* Nodo::getPersona() {
-	return persona;
-}
-void Nodo::setPersona(Persona* p) {
-	this->persona = p;
-}
+
+
 void Nodo::show() {
 	cout << BOLD(FBLU("la persona con id "<<id<<""));
 	cout << BOLD(FBLU(" se ha visto en "));
@@ -28,13 +24,10 @@ void Nodo::show() {
 	
 }
 void Nodo::setRight(Nodo* n) {
-	right = n;
+	r = n;
 }
 void Nodo::setLeft(Nodo* n) {
-	left = n;
-}
-Nodo* Nodo::getLeft() {
-	return left;
+	l = n;
 }
 void Nodo::vista() {
 	vecesVista++;
@@ -48,6 +41,9 @@ void Nodo::setId(int id) {
 int Nodo::getId() {
 	return id;
 }
-Nodo* Nodo::getRight() {
-	return right;
+int Nodo::getAltura() {
+	return h;
+}
+void Nodo::setAltura(int h) {
+	this->h = h;
 }

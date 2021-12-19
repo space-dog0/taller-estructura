@@ -12,10 +12,18 @@ private:
 public:
     ArbolBinario();
     double distanciaEuclideana(Mat img, Mat img2);
-    void Insertar(Persona* p);
+    Nodo* insert(Nodo* nodo, Mat image);
+    void insert(Mat image);
     Nodo* Buscar(Persona* p); // por ahora pongo dato
-    void recorrer(vector<Nodo*> lista);
-    void recorrer(Nodo* node,vector<Nodo*> lista);
+    vector<Nodo*> recorrer();
     void show();
+    Nodo* singleLeftRotate(Nodo* t);
+    Nodo* singleRightRotate(Nodo* t);
+    Nodo* doubleLeftRotate(Nodo* t);
+    Nodo* doubleRightRotate(Nodo* t);
+    void updateHeight(Nodo* n);
+    int height(Nodo* n);
+    int getBalance(Nodo* n);
+    bool isBalanced(Nodo* n);
 
 };
