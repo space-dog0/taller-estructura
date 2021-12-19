@@ -259,7 +259,7 @@ Se logró satisfactoriamente implementar el árbol AVL al taller y guarda todos 
 
 ## 4. Conclusiones
 
-
+A lo largo de la realización de este taller se nos acomplejó el entender como usar las librerías OpenCV, pero contra más fuimos practicando logramos el objetivo satisfactoriamente.
 
 # Anexos
 
