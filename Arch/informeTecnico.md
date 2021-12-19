@@ -255,7 +255,10 @@ Se seguirá utilizando el mismo método para desplegar por pantalla la informaci
 ## 3. Resultados obtenido
 Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un árbol binario, además se puede obtener cuanto tiempo esta estuvo en pantalla, como también su id.
 
+Se logró satisfactoriamente implementar el árbol AVL al taller y guarda todos los rostros detectados con su respectivo tiempo en pantalla.
+
 ## 4. Conclusiones
+
 
 
 # Anexos
