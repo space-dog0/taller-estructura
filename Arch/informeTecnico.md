@@ -264,6 +264,8 @@ Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en
 Para la descarga de las librerías de OpenCv utilizamos la página oficial, y para la instalación utilizamos el video proporcionado por el profesor.
 ## Anexo B: Instalación de IDE y configuración librerías OpenCV
 
+Para la realización del taller se uso Visual Studio y para la confifuración de las librearias se uso un video proporcionado por el profesor.
+
 # Referencia
 
 1. Fernando, S., 2021. Introduction. [online] Opencv-srf.com. Available at: <https://www.opencv-srf.com/p/introduction.html> [Accessed 10 October 2021].
