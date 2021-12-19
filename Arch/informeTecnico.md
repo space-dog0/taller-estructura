@@ -7,7 +7,7 @@
 
 **Alumnos:**
 
-* Nicolas Bravo (Encargado de bitácora)
+* Nicolás Bravo (Encargado de bitácora)
 * Carlos Tapia (Coordinador)
 
 ## Resumen 
@@ -21,7 +21,7 @@
 En el presente proyecto se propone implementar un sistema de vigilancia basado en el reconocimiento de caras. El proyecto busca calcular el tiempo que una persona aparece en la cámara, incluso si esta se pierde en la detección o no se encuentra en el cuadro por un tiempo determinado.
 Para lograr esto se utilizará Visual Studio Community como IDE y las librerías de OpenCV.
 
-El presente trabajo está dividido en 3 capítulos. El primer capítulo es la descripción del problema, los objetivos de este proyecto y su solución. En el segundo capítulo se hablará sobre cómo se desarrollará, como se implementará y que se utilizará en este proyecto. Y en el tercer capítulo se comentará sobre los resultados obtenidos del proyecto y se dará una conclusión.
+El presente trabajo está dividido en 3 capítulos. El primer capítulo es la descripción del problema, los objetivos de este proyecto y su solución. En el segundo capítulo se hablará sobre cómo se desarrollará, como se implementará y que se usará en este proyecto. Y en el tercer capítulo se comentará sobre los resultados obtenidos del proyecto y se dará una conclusión.
 
 ### 1.1 Descripción del problema
 
@@ -50,13 +50,9 @@ Para este proyecto se utilizarán el modelo Haar Cascade , ya que por lo que hem
 
 Para la realización de este proyecto se utilizarán las librerías de OpenCV (ver.4.3.5) y el IDE Visual Studio Comunnity 2019.
 
-### 2.2 Diseño 
-
-
+### 2.2 Diseño
 
 ### 2.3 Implementación
-
-
 
 #### Detector de caras
 
@@ -211,9 +207,9 @@ void ArbolBinario::show() {
 ```
 ![ref2](ref2.png)
 
-#### Implementación del arbol AVL
+#### Implementación del árbol AVL
 
-Se ha implementado un arbol de tipo AVL que se ira balanceando automaticamente a medida que se va insertando los rostros detectados dandonles una id y el tiempo en pantalla
+Se ha implementado un árbol de tipo AVL que se irá balanceando automáticamente a medida que se va insertando los rostros detectados dándoles una id y el tiempo en pantalla.
 
 ```c++
 Nodo* ArbolBinario::insert(Nodo* nodo, Mat image) {
@@ -254,10 +250,10 @@ Nodo* ArbolBinario::insert(Nodo* nodo, Mat image) {
     return nodo;
 }
 ```
-Se seguira utilizando el mismo metodo para desplegar por pantalla la información de cada persona.
+Se seguirá utilizando el mismo método para desplegar por pantalla la información de cada persona.
 
 ## 3. Resultados obtenido
-Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un arbol binario , ademas se puede obtener cuanto tiempo esta estuvo en pantalla, como tambien su id.
+Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un árbol binario, además se puede obtener cuanto tiempo esta estuvo en pantalla, como también su id.
 
 ## 4. Conclusiones
 
