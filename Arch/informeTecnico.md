@@ -141,7 +141,7 @@ int MenuAdmin() {
 }
 ```
 
-#### Implementacion del arbol binario
+#### Implementación del arbol binario
 
 Para el proyecto se implemento un arbol binario para guardar los rostros detectados con sus respectivas id's y tiempos que aparecieron en pantalla.
 
@@ -211,7 +211,7 @@ void ArbolBinario::show() {
 ```
 ![ref2](ref2.png)
 
-#### Implementacion del arbol AVL
+#### Implementación del arbol AVL
 
 Se ha implementado un arbol de tipo AVL que se ira balanceando automaticamente a medida que se va insertando los rostros detectados dandonles una id y el tiempo en pantalla
 
