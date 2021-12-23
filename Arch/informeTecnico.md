@@ -253,18 +253,21 @@ Nodo* ArbolBinario::insert(Nodo* nodo, Mat image) {
 Se seguirá utilizando el mismo método para desplegar por pantalla la información de cada persona.
 
 ## 3. Resultados obtenido
+
 Se logró obtener los rostros de las personas y guardarlas satisfactoriamente en un árbol binario, además se puede obtener cuanto tiempo esta estuvo en pantalla, como también su id.
 
 Se logró satisfactoriamente implementar el árbol AVL al taller y guarda todos los rostros detectados con su respectivo tiempo en pantalla.
 
 ## 4. Conclusiones
 
-A lo largo de la realización de este taller se nos acomplejó el entender como usar las librerías OpenCV, pero contra más fuimos practicando logramos el objetivo satisfactoriamente.
+En la realización de este proyecto fuimos adquiriendo conocimientos que no hubieran sido posibles si no hubiéramos usado las librerías de openCV y salido de nuestra zona de confort, se nos puso a prueba nuestra habilidad  de adaptarnos y aprender cosas nuevas como por ejemplo como la visión artificial compara dos imágenes y retorna un valor y dependiendo de los rangos que nosotros le demos  podemos saber si son la misma persona y así podemos ir armando nuestro árbol AVL de  una manera diferente a la que estamos acostumbrados. Al finalizar este proyecto nos dimos cuenta de que la visión artificial es muy útil, pero también puede ser muy ineficiente si no se usa una estructura de datos adecuada, ya que utiliza una cantidad ingente de información, y utilizando los árboles AVL se puede reducir mucho la cantidad de tiempo necesario para recorrer esta información.
 
 # Anexos
 
 ## Anexo A: Instalación librerías OpenCV
+
 Para la descarga de las librerías de OpenCv utilizamos la página oficial, y para la instalación utilizamos el video proporcionado por el profesor.
+
 ## Anexo B: Instalación de IDE y configuración librerías OpenCV
 
 Para la realización del taller se uso Visual Studio y para la confifuración de las librearias se uso un video proporcionado por el profesor.
